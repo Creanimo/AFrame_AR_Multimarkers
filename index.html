@@ -6,14 +6,37 @@
 	<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-	  <script src="js/multiMarkersName.js"></script>
+	<!--<script src="js/multiMarkersName.js"></script>-->
 	</head>
 	<body>
-	<a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true"
-  embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
-    	<a-entity id='userCamera' camera>
-		<a-cursor> </a-cursor>
-    	</a-entity>
-	</a-scene>
+	    <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true" embedded arjs='debugUIEnabled: true; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+			<a-marker type="pattern" url="resources/markers/pattern-Individual_Blocks-1.patt" id="Marker_1">
+				<a-entity id="text" text="color: red; align: center; value: Marker_1; width: 5.5;" position="0 0 0" rotation="-90 0 0"></a-entity>
+				<a-image src="img/Marker_1.png"></a-image>
+			</a-marker>
+			<a-marker type="pattern" url="resources/markers/pattern-Individual_Blocks-2.patt" id="Marker_2">
+				<a-entity id="text" text="color: red; align: center; value: Marker_2; width: 5.5;" position="0 0 0" rotation="-90 0 0"></a-entity>
+				<a-image src="img/Marker_2.png"></a-image>
+			</a-marker>
+			<a-marker type="pattern" url="resources/markers/pattern-Individual_Blocks-3.patt" id="Marker_3">
+				<a-entity id="text" text="color: red; align: center; value: Marker_3; width: 5.5;" position="0 0 0" rotation="-90 0 0"></a-entity>
+				<a-image src="img/Marker_3.png"></a-image>
+			</a-marker>
+			<a-marker type="pattern" url="resources/markers/pattern-Individual_Blocks-4.patt" id="Marker_4">
+				<a-entity id="text" text="color: red; align: center; value: Marker_4; width: 5.5;" position="0 0 0" rotation="-90 0 0"></a-entity>
+				<a-image src="img/Marker_4.png"></a-image>
+			</a-marker>
+			<a-marker type="pattern" url="resources/markers/pattern-Individual_Blocks-5.patt" id="Marker_5">
+				<a-entity id="text" text="color: red; align: center; value: Marker_5; width: 5.5;" position="0 0 0" rotation="-90 0 0"></a-entity>
+				<a-image src="img/Marker_5.png"></a-image>
+			</a-marker>
+			<a-marker type="pattern" url="resources/markers/pattern-Individual_Blocks-6.patt" id="Marker_6">
+				<a-entity id="text" text="color: red; align: center; value: Marker_6; width: 5.5;" position="0 0 0" rotation="-90 0 0"></a-entity>
+				<a-image src="img/Marker_6.png"></a-image>
+			</a-marker>
+			<a-entity id='userCamera' camera>
+				<a-cursor> </a-cursor>
+			</a-entity>
+		</a-scene>
 	</body>
 </html>
