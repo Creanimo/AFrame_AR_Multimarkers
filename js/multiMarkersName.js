@@ -3,6 +3,8 @@
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
+var imagesURLArray=[];
+var imagesNameArray=[];
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
@@ -19,6 +21,15 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
+		//list of the images
+		for(var p=1; p<19; p++)
+		{
+			var url="img/Image_"+p+".png";
+			imagesURLArray.push(url);
+			imagesNameArray.push('Image_'+p);
+			//console.log(url);
+		}
+
 		for(var k=0; k<18; k++)
 		{
 			var markerEl = document.createElement('a-marker');
@@ -29,15 +40,17 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
-			//Adding text to each marker
-			var textEl = document.createElement('a-entity');
+			//Adding images to each marker
+			var imageEl = document.createElement('a-image');
 			
-			textEl.setAttribute('id','text');
-			textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
-			textEl.object3D.position.set(0, 0.7, 0);
-			textEl.object3D.rotation.set(-90, 0, 0);
+			imageEl.setAttribute('id',imagesNameArray[k]);
+			imageEl.setAttribute('src',imagesURLArray[k]);
+			imageEl.setAttribute('look-at','[camera]');
+			imageEl.setAttribute('width','3');
+			imageEl.setAttribute('height','3');
+			imageEl.object3D.position.set(0, 2.5, 0);
 
-			markerEl.appendChild(textEl);
+			markerEl.appendChild(imageEl);
 		}
 	}
 });
